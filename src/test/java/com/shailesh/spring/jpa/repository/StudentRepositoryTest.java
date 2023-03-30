@@ -75,4 +75,38 @@ class StudentRepositoryTest {
         System.out.println("Student="+student);
     }
 
+    @Test
+    public void printStudentByFirstNameParam()
+    {
+        Student s = studentRepository.getStudentByFirstName("Kanjibhai");
+        System.out.println("Student:"+s);
+    }
+
+    @Test
+    public void updateFirstNameByEmail()
+    {
+        int i = studentRepository.updateStudentNameByEmailId("Harjibhai","darjikanjibhai@gmail.com");
+        if(i>0)
+        {
+            System.out.println("Updated Successfully");
+        }
+        else{
+            System.out.println("Something wrong!");
+        }
+    }
+
+    @Test
+    public void updateStudent()
+    {
+        int i = studentRepository.updateStudentById("pareshbhai@gmail.com","Pareshbhai","Darji",2l);
+        if(i>0)
+        {
+            System.out.println("Updated Successfully");
+        }
+        else{
+            System.out.println("Something wrong!");
+        }
+    }
+
+
 }
